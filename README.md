@@ -42,3 +42,20 @@ user agent information in HTTP requests.
 ## Log format
 
     host - - [timestamp] "METHOD /path HTTP/version" status bytes
+
+## Dataset
+
+This script was tested with NASA's HTTP server logs (July 1995), a well-known
+public dataset with 1,891,714 real requests.
+
+Download:
+
+    ftp://ita.ee.lbl.gov/traces/NASA_access_log_Jul95.gz
+
+After downloading, extract with:
+
+    gunzip NASA_access_log_Jul95.gz
+
+Then run:
+
+    ./web-log-analyser.sh
