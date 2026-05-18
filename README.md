@@ -1,2 +1,44 @@
-# nginx-log-analyser
-Shell script to analyze Nginx access logs and extract top IPs, paths, status codes and user agents
+# Web Log Analyser
+
+A shell script to analyze web server access logs and extract traffic insights.
+
+## Dataset
+
+Analyzed 1,891,714 real HTTP requests from NASA's public web server logs (July 1995),
+one of the most well-known public datasets for log analysis.
+
+Note: This dataset predates user agent tracking — browsers in 1995 did not send
+user agent information in HTTP requests.
+
+## Usage
+
+    ./web-log-analyser.sh <log-file>
+
+## What it shows
+
+- Top 5 hosts/IPs with the most requests
+- Top 5 most requested paths
+- Top 5 response status codes
+- Top 5 user agents (when available)
+
+## Example output
+
+    ==============================
+         WEB LOG ANALYSER
+    ==============================
+    Log file : NASA_access_log_Jul95
+    Total requests: 1891714
+
+    Top 5 IP addresses with the most requests:
+    piweba3y.prodigy.com - 17572 requests
+    ...
+
+## Requirements
+
+- Linux (any distribution)
+- Bash
+- Tools: awk, sort, uniq, head
+
+## Log format
+
+    host - - [timestamp] "METHOD /path HTTP/version" status bytes
